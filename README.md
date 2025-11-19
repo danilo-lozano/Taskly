@@ -370,39 +370,52 @@ Taskly/
 
 ## 🌐 Despliegue
 
-### Opción 1: Vercel (Frontend) + Railway (Backend)
+### ✅ Aplicación en Producción
+
+**La aplicación está desplegada y funcionando:**
+
+- **🌐 Frontend:** https://taskly-phi-nine.vercel.app
+- **⚙️ Backend:** https://taskly-production-8a47.up.railway.app
+- **🗄️ Base de Datos:** MySQL 8+ en Railway
+
+### Arquitectura Cloud
+
+```
+Frontend (Vercel) → Backend (Railway) → MySQL (Railway)
+```
+
+### Cómo Fue Desplegado
 
 #### Frontend en Vercel
-
-1. Crear cuenta en https://vercel.com
-2. Conectar repositorio GitHub
-3. Configurar:
-   - Build Command: `cd frontend && npm run build`
-   - Output Directory: `frontend/dist`
-4. Agregar variable de entorno: `VITE_API_URL=https://tu-backend.railway.app/api`
-5. Deploy
+1. Repositorio conectado desde GitHub
+2. Configuración:
+   - **Root Directory:** `frontend`
+   - **Framework:** Vite
+   - **Build Command:** `npm run build`
+   - **Output Directory:** `dist`
+3. Variable de entorno: `VITE_API_URL=https://taskly-production-8a47.up.railway.app/api`
+4. Deploy automático con cada push a `main`
 
 #### Backend en Railway
+1. Servicio MySQL agregado
+2. Repositorio conectado desde GitHub
+3. Configuración: `railway.json` + `nixpacks.toml`
+4. Variables de entorno configuradas (DB, JWT, CORS)
+5. Dominio público generado automáticamente
+6. Deploy automático con cada push a `main`
 
-1. Crear cuenta en https://railway.app
-2. Crear nuevo proyecto
-3. Agregar servicio MySQL
-4. Agregar servicio Node.js
-5. Configurar variables de entorno
-6. Deploy
+### Desarrollo Local
 
-### Opción 2: Hosting Tradicional
+Para ejecutar el proyecto localmente:
 
-#### Backend
-- Subir carpeta `backend` a tu servidor
-- Instalar dependencias: `npm install`
-- Configurar `.env` con datos de producción
-- Iniciar: `npm start`
+**Requisitos:** Node.js 16+, MySQL 8+
 
-#### Frontend
-- Compilar: `npm run build`
-- Subir carpeta `dist` a tu hosting
-- Configurar servidor web (Apache/Nginx)
+1. Clonar repositorio y configurar base de datos (`database/schema.sql`)
+2. Crear archivos `.env` (ver `.env.example`)
+3. Instalar dependencias: `npm install` en `backend/` y `frontend/`
+4. Ejecutar: `npm run dev` en ambas carpetas
+
+📖 Más detalles en [DOCUMENTACION_TECNICA.md](DOCUMENTACION_TECNICA.md)
 
 ---
 
