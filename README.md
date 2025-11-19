@@ -2,6 +2,8 @@
 
 Sistema completo de gestión de tareas desarrollado con Node.js, Express, React, Vite y MySQL. Incluye autenticación, CRUD completo, analytics y perfil de usuario.
 
+**🌐 Ver aplicación en producción:** [https://taskly-phi-nine.vercel.app](https://taskly-phi-nine.vercel.app)
+
 ![Taskly](https://img.shields.io/badge/version-1.0.0-blue)
 ![Node](https://img.shields.io/badge/node-%3E%3D16.0.0-green)
 ![React](https://img.shields.io/badge/react-19.2.0-blue)
