@@ -1,0 +1,152 @@
+.perfil-container {
+  display: grid;
+  gap: 2rem;
+  max-width: 900px;
+}
+
+.perfil-card {
+  animation: fadeIn 0.3s ease;
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9ff 100%);
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(108, 99, 255, 0.1);
+  border: 1px solid rgba(108, 99, 255, 0.1);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.perfil-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 5px;
+  background: linear-gradient(90deg, var(--primary-color) 0%, #95E1D3 100%);
+}
+
+.perfil-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 40px rgba(108, 99, 255, 0.15);
+}
+
+.perfil-foto-section {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.foto-perfil {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 5px solid transparent;
+  background: linear-gradient(white, white) padding-box,
+              linear-gradient(135deg, var(--primary-color), #95E1D3) border-box;
+  box-shadow: 0 10px 30px rgba(108, 99, 255, 0.3);
+  transition: all 0.3s ease;
+}
+
+.foto-perfil:hover {
+  transform: scale(1.05);
+  box-shadow: 0 15px 40px rgba(108, 99, 255, 0.4);
+}
+
+.foto-perfil img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.foto-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(108, 99, 255, 0.8);
+  color: white;
+  padding: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.foto-overlay:hover {
+  background: rgba(108, 99, 255, 1);
+}
+
+.perfil-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.perfil-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+.info-item {
+  padding: 1.25rem;
+  border-bottom: 1px solid rgba(108, 99, 255, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(90deg, rgba(108, 99, 255, 0.02) 0%, transparent 100%);
+  margin-bottom: 0.5rem;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+
+.info-item:hover {
+  background: linear-gradient(90deg, rgba(108, 99, 255, 0.05) 0%, transparent 100%);
+  transform: translateX(5px);
+}
+
+.info-item:last-child {
+  border-bottom: none;
+}
+
+.info-label {
+  font-weight: 600;
+  color: var(--text-color);
+}
+
+.info-value {
+  color: var(--text-muted);
+}
+
+/* Footer principal */
+.main-footer {
+  margin-top: 3rem;
+  padding: 1.5rem 0;
+  text-align: center;
+  border-top: 1px solid #e9ecef;
+  background: #f8f9fa;
+  color: #6c757d;
+  font-size: 0.875rem;
+}
+
+.main-footer p {
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .perfil-container {
+    max-width: 100%;
+  }
+
+  .perfil-actions {
+    flex-direction: column;
+  }
+
+  .perfil-actions button {
+    width: 100%;
+  }
+}

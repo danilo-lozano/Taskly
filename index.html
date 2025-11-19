@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Taskly — Organiza tu día</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="../img/logo.png">
+  <link rel="shortcut icon" type="image/png" href="../img/logo.png">
+  <link rel="apple-touch-icon" href="../img/logo.png">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Font Awesome (íconos de redes sociales) -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+
+  <!-- Estilos principales -->
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-transparent py-3">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center gap-2" href="#">
+        <img src="../img/logo.png" alt="Taskly logo" class="logo-img me-2">
+        <span class="brand-name">Taskly</span>
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMain" aria-controls="navMain" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navMain">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#features">Características</a></li>
+          <li class="nav-item nav-separator">|</li>
+          <li class="nav-item"><a class="nav-link" href="#login">Iniciar sesión</a></li>
+          <li class="nav-item nav-separator">|</li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contacto</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Presentación + Gestor de Tareas -->
+  <main class="main-gradient">
+    <div class="container py-5">
+      <div class="row align-items-center gy-4">
+        
+        <!-- Sección de presentación -->
+        <section class="col-lg-7">
+          <h1 class="display-5 fw-700 mb-3">Organiza tu día, alcanza tus metas.</h1>
+          <p class="lead text-muted mb-4">
+            Taskly es una aplicación web ligera e intuitiva para gestionar tus tareas diarias sin complicaciones.
+            Interfaz limpia, filtros rápidos y acciones directas para que no pierdas tiempo.
+          </p>
+
+          <div class="row row-cols-1 row-cols-sm-2 g-3">
+            <div class="col">
+              <div class="card feature-card p-3 h-100">
+                <div class="card-body p-0">
+                  <h5 class="mb-1">Minimalismo</h5>
+                  <p class="small text-muted mb-0">Solo lo que necesitas: crear, completar y filtrar tareas.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card feature-card p-3 h-100">
+                <div class="card-body p-0">
+                  <h5 class="mb-1">Responsive</h5>
+                  <p class="small text-muted mb-0">Funciona igual de bien en móvil y escritorio.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Card de login -->
+        <aside id="login" class="col-lg-5">
+          <div class="card login-card p-4 shadow-sm">
+            <div class="card-body">
+              <div class="text-center mb-3">
+                <img src="img/logo.png" alt="Taskly" class="logo-sm mb-2">
+                <h5 class="mb-0">Iniciar sesión</h5>
+              </div>
+
+              <!-- Contenedor interno azul -->
+              <div class="login-inner-container p-4">
+                <form id="form-login" class="mt-3">
+                  <div class="mb-3">
+                    <label for="email" class="form-label small text-white">Correo electrónico</label>
+                    <input type="email" class="form-control login-input" id="email" placeholder="tucorreo@ejemplo.com" required>
+                  </div>
+
+                  <div class="mb-3">
+                    <label for="password" class="form-label small text-white">Contraseña</label>
+                    <input type="password" class="form-control login-input" id="password" placeholder="••••••••" required>
+                  </div>
+
+                  <div class="text-center mb-2">
+                    <button type="submit" class="btn login-btn">Iniciar sesión</button>
+                  </div>
+
+                  <div class="text-center">
+                    <a href="#" class="login-link small" data-bs-toggle="modal" data-bs-target="#createAccountModal">Crear cuenta</a>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </main>
+
+  <!-- Sección de funciones -->
+  <section id="features" class="py-5">
+    <div class="container">
+      <h2 class="h3 mb-4">Funciones principales</h2>
+      <div class="row g-3">
+        <div class="col-md-4">
+          <div class="card h-100">
+            <div class="card-body">
+              <h5 class="card-title">Crear y editar tareas</h5>
+              <p class="card-text small text-muted">Añade detalles, fecha límite y prioridad de forma rápida.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card h-100">
+            <div class="card-body">
+              <h5 class="card-title">Filtrar y marcar</h5>
+              <p class="card-text small text-muted">Filtros rápidos (Todas, Pendientes, Completadas) y check para completar.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card h-100">
+            <div class="card-body">
+              <h5 class="card-title">Guardado seguro</h5>
+              <p class="card-text small text-muted">Base de datos MySQL para guardar tus tareas de forma segura.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pie de página -->
+  <footer id="contact" class="bg-light py-4">
+    <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center">
+      <div class="mb-3 mb-md-0 text-center text-md-start">
+        <strong>Taskly</strong> • Organiza tu día — © <span id="year"></span>
+      </div>
+
+      <div class="social-links text-center">
+        <a class="me-3" href="https://www.facebook.com" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a class="me-3" href="https://www.youtube.com" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+        <a href="https://www.instagram.com" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Modal para Crear Cuenta -->
+  <div class="modal fade" id="createAccountModal" tabindex="-1" aria-labelledby="createAccountLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header border-0">
+          <h5 class="modal-title" id="createAccountLabel">Registro</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+        </div>
+        <div class="modal-body">
+          <!-- Contenedor interno azul -->
+          <div class="login-inner-container p-4">
+            <form id="form-registro">
+              <div class="mb-3">
+                <label class="form-label small text-white">Nombre completo</label>
+                <input type="text" class="form-control login-input" id="nombre" placeholder="Tu nombre completo" required>
+              </div>
+              <div class="mb-3">
+                <label class="form-label small text-white">Correo electrónico</label>
+                <input type="email" class="form-control login-input" id="email-registro" placeholder="tucorreo@ejemplo.com" required>
+              </div>
+              <div class="mb-3">
+                <label class="form-label small text-white">Contraseña</label>
+                <input type="password" class="form-control login-input" id="password-registro" placeholder="••••••••" required>
+              </div>
+              <div class="text-center">
+                <button type="submit" class="btn login-btn">Crear cuenta</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FAB (solo visible en móvil) -->
+  <button class="floating-btn btn btn-circle d-md-none" aria-label="Ir al login" onclick="scrollToLogin()">
+    <i class="fa fa-user"></i>
+  </button>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Script de autenticación -->
+  <script src="../js/auth.js"></script>
+
+  <!-- Script simple para mostrar el año actual -->
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    
+    function scrollToLogin() {
+      document.getElementById('login').scrollIntoView({ behavior: 'smooth' });
+    }
+  </script>
+</body>
+</html>
