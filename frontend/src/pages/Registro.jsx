@@ -109,78 +109,73 @@ const Registro = () => {
 
   return (
     <div className="login-container">
-      <div className="login-card fade-in">
-        <div className="login-header">
-          <img src="/images/logo.png" alt="Taskly" className="login-logo" style={{width: '100px', height: '100px', display: 'block', margin: '0 auto 1rem'}} />
-          <h2>Crear Cuenta</h2>
-          <p className="text-muted">Únete a Taskly y organiza tus tareas</p>
-        </div>
-
-        <form onSubmit={handleSubmit} className="login-form">
-          <div className="form-group">
-            <label htmlFor="nombre">Nombre completo</label>
-            <input
-              type="text"
-              id="nombre"
-              value={nombre}
-              onChange={(e) => setNombre(e.target.value)}
-              placeholder="Tu nombre completo"
-              required
-            />
+      <div className="login-section" style={{gridColumn: '1 / -1'}}>
+        <div className="login-card fade-in">
+          <div className="login-header">
+            <img src="/images/logo.png" alt="Taskly" className="login-logo" style={{width: '100px', height: '100px', display: 'block', margin: '0 auto 1rem'}} />
+            <h2>Crear Cuenta</h2>
+            <p className="text-muted">Únete a Taskly y organiza tus tareas</p>
           </div>
-
-          <div className="form-group">
-            <label htmlFor="email">Correo electrónico</label>
-            <input
-              type="email"
-              id="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              placeholder="tucorreo@ejemplo.com"
-              required
-            />
+          <form onSubmit={handleSubmit} className="login-form">
+            <div className="form-group">
+              <label htmlFor="nombre">Nombre completo</label>
+              <input
+                type="text"
+                id="nombre"
+                value={nombre}
+                onChange={(e) => setNombre(e.target.value)}
+                placeholder="Tu nombre completo"
+                required
+              />
+            </div>
+            <div className="form-group">
+              <label htmlFor="email">Correo electrónico</label>
+              <input
+                type="email"
+                id="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder="tucorreo@ejemplo.com"
+                required
+              />
+            </div>
+            <div className="form-group">
+              <label htmlFor="password">Contraseña</label>
+              <input
+                type="password"
+                id="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                placeholder="••••••••"
+                required
+              />
+            </div>
+            <div className="form-group">
+              <label htmlFor="confirmarPassword">Confirmar contraseña</label>
+              <input
+                type="password"
+                id="confirmarPassword"
+                value={confirmarPassword}
+                onChange={(e) => setConfirmarPassword(e.target.value)}
+                placeholder="••••••••"
+                required
+              />
+            </div>
+            <button 
+              type="submit" 
+              className="btn btn-primary btn-block"
+              disabled={cargando}
+            >
+              {cargando ? 'Registrando...' : 'Crear Cuenta'}
+            </button>
+          </form>
+          <div className="login-footer">
+            <p>
+              ¿Ya tienes cuenta? <Link to="/login" className="link-primary">Iniciar sesión</Link>
+            </p>
           </div>
-
-          <div className="form-group">
-            <label htmlFor="password">Contraseña</label>
-            <input
-              type="password"
-              id="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              placeholder="••••••••"
-              required
-            />
-          </div>
-
-          <div className="form-group">
-            <label htmlFor="confirmarPassword">Confirmar contraseña</label>
-            <input
-              type="password"
-              id="confirmarPassword"
-              value={confirmarPassword}
-              onChange={(e) => setConfirmarPassword(e.target.value)}
-              placeholder="••••••••"
-              required
-            />
-          </div>
-
-          <button 
-            type="submit" 
-            className="btn btn-primary btn-block"
-            disabled={cargando}
-          >
-            {cargando ? 'Registrando...' : 'Crear Cuenta'}
-          </button>
-        </form>
-
-        <div className="login-footer">
-          <p>
-            ¿Ya tienes cuenta? <Link to="/login" className="link-primary">Iniciar sesión</Link>
-          </p>
         </div>
       </div>
-      
       <footer className="auth-footer">
         <p>&copy; 2025 Taskly. Todos los derechos reservados.</p>
       </footer>
