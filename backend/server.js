@@ -16,7 +16,10 @@ const PORT = process.env.PORT || 3000;
 // ====== MIDDLEWARES ======
 // Configurar CORS para producción
 const corsOptions = {
-  origin: process.env.FRONTEND_URL || 'http://localhost:5173',
+  origin: [
+    'https://taskly-phi-nine.vercel.app',
+    'http://localhost:5173'
+  ],
   credentials: true,
   optionsSuccessStatus: 200
 };
